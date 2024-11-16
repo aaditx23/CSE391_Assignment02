@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quote-box {
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid black;
+            width: 40%;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .color-buttons {
+            margin: 10px;
+        }
+
+        .color-buttons button {
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/section.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="css/clickable-card.css" />
+        <link rel="stylesheet" href="css/card.css" />
+        <link rel="stylesheet" href="css/table.css" />
+        <link rel="stylesheet" href="css/div.css" />
+    <script src="js/Fortune.js"></script>
+    <script src="js/fortuneManager.js"></script>
+</head>
+<body>
+        <div class="quote-box" id="quote-box">
+            Your fortune will appear here.
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; CSE391</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fortuneManager = new FortuneManager("quote-box");
+            fortuneManager.displayRandomFortune();
+
+            document.querySelectorAll(".clickable-card").forEach(button => {
+                const idx = Number(button.getAttribute("index"));
+                const object = fortuneManager.fortuneStyles[idx]
+                fortuneManager.setButtonColors(button, idx);
+                button.addEventListener("click", () => {
+                    fortuneManager.changeStyle(idx);
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
