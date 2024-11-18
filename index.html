@@ -13,43 +13,76 @@
             padding: 0;
         }
 
-        .quote-box {
-            margin: 20px auto;
-            padding: 20px;
-            border: 2px solid black;
-            width: 40%;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .color-buttons {
-            margin: 10px;
-        }
-
-        .color-buttons button {
-            margin: 5px;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
     </style>
-        <link rel="stylesheet" href="css/styles.css" />
-        <link rel="stylesheet" href="css/section.css" />
-        <link rel="stylesheet" href="css/navbar.css" />
-        <link rel="stylesheet" href="css/fonts.css" />
-        <link rel="stylesheet" href="css/clickable-card.css" />
-        <link rel="stylesheet" href="css/card.css" />
-        <link rel="stylesheet" href="css/table.css" />
-        <link rel="stylesheet" href="css/div.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/section.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/clickable-card.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/table.css" />
+    <link rel="stylesheet" href="css/div.css" />
+    
     <script src="js/Fortune.js"></script>
     <script src="js/fortuneManager.js"></script>
+    <script src="js/weightConverter.js"></script>
+    <script src="js/array.js"></script>
+    <script src="js/magic.js"></script>
 </head>
-<body>
-        <div class="quote-box" id="quote-box">
-            Your fortune will appear here.
+<body class="body-bg">
+
+
+    <div class="flex-row-justified" style="width: 60%; margin-left: auto; margin-right: auto;">
+        <div class="card" style="padding: 20px;">
+            <h2>Weight Converter</h2><br>
+            <label for="weightIn">Weight:</label><br>
+            <input type="number" id="weightIn" placeholder="Enter weight" /><br>
+    
+            <label for="unitType">Convert:</label><br>
+            <select id="unitType">
+                <option value="k2p">KG -> lb</option>
+                <option value="p2k">lb -> KG</option>
+            </select><br>
+    
+            <button onclick="convert()">Convert</button><br>
+    
+            <span id="result"></span>
+        </div>
+    
+    
+        <div class="card" style=" padding: 20px; background-color: cadetblue;">
+            <h2>Series Calculator</h2><br>
+            <label for="seriesInput">Input series of numbers (comma-separated):</label><br>
+            <input type="text" id="seriesInput" placeholder="e.g., 5, 10, 15" />
+            <div class="card-transparent" style="background-color: rgba(106, 0, 206, 0.3); margin-top: 10px;">
+                <div><strong>Max:</strong> <span id="maxOutput">-</span></div>
+                <div><strong>Min:</strong> <span id="minOutput">-</span></div>
+                <div><strong>Sum:</strong> <span id="sumOutput">-</span></div>
+                <div><strong>Average:</strong> <span id="avgOutput">-</span></div>
+                <div><strong>Reverse Order:</strong> <span id="reverseOutput">-</span></div>
+            </div>
         </div>
     </div>
+
+    <div>
+        <h1>Text Manipulator</h1>
+        <textarea id="textArea"></textarea>
+        <div>
+            <button id="clearAll">Clear All</button>
+            <button id="capitalize">Capitalize</button>
+            <button id="sort">Sort</button>
+            <button id="reverse">Reverse</button>
+            <button id="stripBlank">Strip Blank</button>
+            <button id="addNumbers">Add Numbers</button>
+            <button id="shuffle">Shuffle</button>
+        </div>
+    </div>
+
+
+    <div class="quote-box" id="quote-box">
+        Your fortune will appear here.
+    </div>
+
 
     <footer>
         <p>&copy; CSE391</p>

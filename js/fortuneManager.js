@@ -1,5 +1,11 @@
 class FortuneManager {
     constructor(quoteBoxId) {
+        this.defaultStyle = new FortuneStyle({
+            fontFamily: "Arial",
+                fontColor: "black", // Material Green 500
+                bgColor: "white", // Light Green 50
+                fontSize: "13px"
+        })
         this.fortuneStyles = [
             new FortuneStyle({
                 fontFamily: "Verdana",
@@ -56,7 +62,7 @@ class FortuneManager {
     displayRandomFortune() {
         const randomIndex = Math.floor(Math.random() * this.fortunes.length);
         const fortune = this.fortunes[randomIndex];
-        const style = this.fortuneStyles[randomIndex]
+        const style = this.defaultStyle
 
         console.log(`This is beinbg called, ${fortune.text}`)
 

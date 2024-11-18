@@ -3,6 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+.quote-box {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    width: 40%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.color-buttons {
+    margin: 10px;
+}
+
+.color-buttons button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
 /* Smooth Scroll */
 html {
@@ -69,6 +89,7 @@ html {
     font-family: Evolve;
     position: relative;
     overflow: auto; /* Ensures the pseudo-element stays within bounds */
+    text-align: center;
 }
 
 /* Background overlay */
